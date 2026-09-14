@@ -344,7 +344,7 @@
           <div class="badge">⚔️ ROYALE EINLADUNG ⚔️</div>
           <h1>Eine wichtige Nachricht</h1>
           <p class="copy">
-            Der Dustin himself lädt sie zu einer genüsslichen Partei Clash Royal ein
+            Der Dustin himself lädt Sie zu einer genüsslichen Partie Clash Royale ein
           </p>
           <div class="stack">
             <button class="blue" id="continueBtn">Äh.. ok?</button>
@@ -355,7 +355,7 @@
           <div class="badge">👑 DER DUSTIN HIMSELF 👑</div>
           <h2>Wie sieht's aus?</h2>
           <p class="copy">
-            Der Dustin himself möchte wissen, wie es um ihr Interesse zu dieser Einladung steht
+            Der Dustin himself möchte wissen, wie es um Ihr Interesse an dieser Einladung steht
           </p>
 
           <div class="stack" id="options">
@@ -497,6 +497,7 @@
         timeBtn.disabled = true;
         timeInput.disabled = true;
 
+        // Fast -> medium -> slow. The final result is always the new extra option.
         const timings = [
           65,65,70,70,75,80,85,90,95,105,
           115,125,140,155,170,190,215,245,280,325,380,450,540
@@ -505,6 +506,7 @@
         let idx = 0;
 
         for (let i = 0; i < timings.length; i++) {
+          // Avoid landing on the special final choice before the end.
           const pool = gambleChoices.slice(0, -1);
           const next = pool[idx % pool.length];
           idx++;
